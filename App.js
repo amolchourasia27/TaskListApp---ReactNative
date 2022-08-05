@@ -116,6 +116,8 @@ const styles = StyleSheet.create({
   },
   textBox: {
     alignItems: 'center',
+    color: '#EFEFEF',
+    fontWeight: 'bold',
   },
   Box: {
     alignItems: 'flex-start',
