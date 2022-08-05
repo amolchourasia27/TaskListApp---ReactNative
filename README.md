@@ -22,7 +22,9 @@
 - Start terminal and write command react-native run-android and run app on your plugged phone/Android Emulator
 
 #### Screenshots
+<Span>
 
-<img align="left" alt="screenshot" width="200" src=>
+<img align="left" alt="screenshot" width="200" src='https://github.com/amolchourasia27/TaskListApp---ReactNative/blob/main/readmeimageAssets/ScreenShot1.jpg?raw=true'>
 
-<img align="left" alt="screenshot" width="200" src=>
+<img align="right" alt="screenshot" width="200" src='https://github.com/amolchourasia27/TaskListApp---ReactNative/blob/main/readmeimageAssets/ScreenShot2.jpg?raw=true'>
+</Spam>
