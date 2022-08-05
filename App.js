@@ -67,7 +67,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   bodyWrapper: {
-    backgroundColor: '#112B3C',
+    backgroundColor: '#222831',
     justifyContent: 'center',
     flexDirection: 'column',
   },
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   InputField: {
-    backgroundColor: '#205375',
+    backgroundColor: '#393E46',
     height: 70,
     margin: 50,
     borderRadius: 15,
@@ -91,11 +91,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: '20%',
     width: '100%',
-    backgroundColor: '#112B3C',
+    backgroundColor: '#222831',
     alignSelf: 'center',
   },
   inputButton: {
-    backgroundColor: '#F66B0E',
+    backgroundColor: '#00ADB5',
     height: 50,
     width: 5,
     flex: 3,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   removeButton: {
-    backgroundColor: '#F66B0E',
+    backgroundColor: '#00ADB5',
     height: 50,
     width: 15,
     marginLeft: '10%',
@@ -124,10 +124,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 5,
     padding: 5,
-    backgroundColor: '#F66B0E',
+    backgroundColor: '#00ADB5',
   },
   listWrapper: {
-    backgroundColor: '#112B3C',
+    backgroundColor: '#222831',
     margin: 20,
   },
   buttonText: {
@@ -137,10 +137,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   listContainer: {
-    backgroundColor: '#112B3C',
+    backgroundColor: '#222831',
   },
   scrollWrapper: {
-    backgroundColor: '#112B3C',
+    backgroundColor: '#222831',
     height: '35%',
     width: '100%',
     alignContent: 'center',
