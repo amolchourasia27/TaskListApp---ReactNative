@@ -8,7 +8,6 @@ import {
   View,
 } from 'react-native';
 
-const defaultValue = '                            ⬇️⬇️ List will appear ⬇️⬇️';
 const App = () => {
   const [task, setTask] = useState('');
   const [taskItems, setTaskItems] = useState([]);
@@ -16,22 +15,29 @@ const App = () => {
     setTaskItems([...taskItems, task]);
     setTask(null);
   };
-  const completeTask = index => {
+  const completeTask = idx => {
     let itemsCopy = [...taskItems];
-    itemsCopy.splice(index, 1);
+    itemsCopy.splice(idx, 1);
     setTaskItems(itemsCopy);
   };
   const List = props => {
     return (
       <View style={styles.Box}>
         <Text style={styles.textBox}>{props.data}</Text>
+        <View style={styles.checkBokContainer}>
+          <TouchableOpacity onPress={() => completeTask(props.idx)}>
+            <View style={styles.checkBok}>
+              <Text>✔️</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   };
 
   return (
     <View style={styles.bodyWrapper}>
-      <Text style={styles.title}>Enter Item in a list</Text>
+      <Text style={styles.title}>Create Task List!!</Text>
       <View>
         <TextInput
           style={styles.InputField}
@@ -44,20 +50,19 @@ const App = () => {
         <TouchableOpacity
           style={styles.inputButton}
           onPress={() => handelAddTask()}>
-          <Text style={styles.buttonText}>Enter</Text>
+          <Text style={styles.buttonText}>Enter Task</Text>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.removeButton}
           onPress={() => completeTask()}>
           <Text style={styles.buttonText}>Remove</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       <View />
       <View style={styles.scrollWrapper}>
-        <List data={defaultValue} />
         <ScrollView style={styles.listWrapper}>
           {taskItems.map((item, index) => {
-            return <List key={index} data={item} />;
+            return <List key={index} data={item} idx={index} />;
           })}
         </ScrollView>
       </View>
@@ -70,11 +75,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#222831',
     justifyContent: 'center',
     flexDirection: 'column',
+    height: '100%',
   },
   title: {
-    fontSize: 30,
+    fontSize: 40,
     textAlign: 'center',
-    marginTop: 50,
+    marginTop: 25,
     paddingTop: 25,
     paddingBottom: 15,
     color: '#EFEFEF',
@@ -98,20 +104,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#00ADB5',
     height: 50,
     width: 5,
-    flex: 3,
-    marginLeft: '10%',
-    marginRight: '10%',
-    borderRadius: 15,
-    alignSelf: 'center',
-  },
-  removeButton: {
-    backgroundColor: '#00ADB5',
-    height: 50,
-    width: 15,
-    marginLeft: '10%',
-    marginRight: '10%',
-    flex: 3,
-    borderRadius: 15,
+    flex: 6,
+    marginLeft: '9%',
+    marginRight: '9%',
+    borderRadius: 5,
     alignSelf: 'center',
   },
   textBox: {
@@ -120,7 +116,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   Box: {
-    alignItems: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'flex-end',
     borderRadius: 10,
     margin: 5,
     padding: 5,
@@ -131,19 +128,31 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   buttonText: {
-    padding: 10,
-    margin: '5%',
+    marginTop: '5%',
     fontWeight: 'bold',
     alignSelf: 'center',
+    color: 'white',
   },
   listContainer: {
     backgroundColor: '#222831',
   },
   scrollWrapper: {
     backgroundColor: '#222831',
-    height: '35%',
-    width: '100%',
+    height: 200,
+    width: 350,
     alignContent: 'center',
+  },
+  checkBok: {
+    backgroundColor: 'green',
+    height: 20,
+    width: 20,
+    borderWidth: 1,
+  },
+  checkBokContainer: {
+    alignContent: 'center',
+    marginLeft: 250,
+    paddingBottom: 4,
+    position: 'absolute',
   },
 });
 export default App;
